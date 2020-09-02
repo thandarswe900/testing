@@ -1,0 +1,48 @@
+// Main Functions
+
+- Item Manage
+  -Brand / Category / Subcategory
+
+- Sell / Shopping
+
+- Order Management
+ 	- items / customer
+ 	- orders / order_detail
+
+- Customer Manage
+	- Reports
+
+
+
+
+
+
+
+
+
+Model Relationship
+------------------
+
+- one-to-one
+    - hasOne(p)
+    - belongsTo(c)
+
+- one-to-many
+    - hasMany(p)
+    - belongsTo(c)
+
+- many-to-many
+	- belongsToMany
+	- pivot table
+
+
+
+
+
+Item(CRUD)
+----------
+	
+create-show form,store data
+retrieve-display data(all,row)
+update-show from with old value,update date
+delete-delete data
