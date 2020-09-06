@@ -13,7 +13,8 @@
 
 		<div class="row justify-content-center">
 			<div class="col-5">
-				<form action="signin" method="POST">
+				<form action="{{route('login')}}" method="POST">
+					@csrf
 		      		<div class="form-group">
 		      			<label class="small mb-1" for="inputEmailAddress">Email</label>
 		      			<input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" />

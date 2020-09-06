@@ -4,7 +4,7 @@
 
 <div class="jumbotron jumbotron-fluid subtitle">
   		<div class="container">
-    		<h1 class="text-center text-white"> Code Number </h1>
+    		<h1 class="text-center text-white"> Code Number :{{$items->codeno}} </h1>
   		</div>
 	</div>
 	
@@ -31,13 +31,13 @@
 
 		<div class="row mt-5">
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-				<img src="{{asset('front/image/item/saisai_one.jpg')}}" class="img-fluid">
+				<img src="{{asset($items->photo)}}" class="img-fluid">
 			</div>	
 
 
 			<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
 				
-				<h4> Item Name </h4>
+				<h4> {{$items->name}} </h4>
 
 				<div class="star-rating">
 					<ul class="list-inline">
@@ -60,17 +60,17 @@
 
 				<p> 
 					<span class="text-uppercase "> Current Price : </span>
-					<span class="maincolor ml-3 font-weight-bolder"> 180,000 Ks </span>
+					<span class="maincolor ml-3 font-weight-bolder"> {{$items->price}} Ks </span>
 				</p>
 
 				<p> 
 					<span class="text-uppercase "> Brand : </span>
-					<span class="ml-3"> <a href="" class="text-decoration-none text-muted"> Brand Name </a> </span>
+					<span class="ml-3"> <a href="" class="text-decoration-none text-muted">{{$items->brand->name}}</a> </span>
 				</p>
 
 
-				<a href="#" class="addtocartBtn text-decoration-none">
-					<i class="icofont-shopping-cart mr-2"></i> Add to Cart
+				<a href="#" class="addtocartBtn text-decoration-none" data-id="{{$items->id}}" data-photo="{{$items->photo}}" data-name="{{$items->name}}" data-price="{{$items->price}}">
+					<i class="icofont-shopping-cart mr-2" ></i> Add to Cart
 				</a>
 				
 			</div>

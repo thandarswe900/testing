@@ -38,7 +38,23 @@
 
 					</tbody>
 					<tfoot id="shoppingcart_tfoot">
-						
+						<tr>
+					<td colspan="8">
+					<h3 class="text-right">Total:<span id="total"> </span>Ks</h3>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<textarea class="form-control" id="notes" placeholder="Any Request..."></textarea>
+					</td>
+					<td colspan="3">
+						@role('Customer')
+						<button class="btn btn-secondary btn-block mainfullbtncolor buy_now">Checkout</button>
+						@else
+						<a href="{{route('loginpage')}}" class="btn btn-secondary btn-block mainfullbtncolor">Login To Checkout</a>
+						@endrole
+					</td>
+				</tr>
 						
 					</tfoot>
 				</table>

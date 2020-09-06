@@ -6,8 +6,8 @@
             <h1 class="h3 mb-0 text-gray-800">Order Detail Information</h1>
           </div>
           <!-- Content Row -->
-        <h5>Voucherno: {{$orderdetail->voucherno}}</h5>
-        <h5>Orderdate: {{$orderdetail->orderdate}}</h5>
+        <h5>Voucherno: {{$order->voucherno}}</h5>
+        <h5>Orderdate: {{$order->orderdate}}</h5>
         <div class="container-fluid">
           <div class="row">
            <table class="table table-bordered">
@@ -22,7 +22,7 @@
                 @php 
                   $i=1; 
                 @endphp
-                @foreach ($orderdetail->items as $orderitems)
+                @foreach ($order->items as $orderitems)
                   <tr>
                     <td>{{$i++}}</td>
                     <td>{{$orderitems->name}}</td>
@@ -33,7 +33,7 @@
                 @endforeach
                 <tr>
                   <td colspan="4"  class="table-dark">Total:</td>
-                  <td  class="table-dark">{{$orderdetail->total}}</td>
+                  <td  class="table-dark">{{$order->total}}</td>
                 </tr>
               </tbody>
             </table>

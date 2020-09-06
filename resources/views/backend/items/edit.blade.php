@@ -64,7 +64,7 @@
   	<select class="form-control form-control-md" id="inputBrand" name="brand">
   		<optgroup label="Choose Brand">
   			@foreach($brands as $brand)
-  			<option value="{{$brand->id}}">{{$brand->name}}</option>
+  			<option value="{{$brand->id}}"<?php if($item->brand_id==$brand->id) echo "selected";?>>{{$brand->name}}</option>
   			@endforeach
   		</optgroup>
   	</select>
@@ -76,7 +76,7 @@
   	<select class="form-control form-control-md" id="inputSubcategory" name="subcategory">
   		<optgroup label="Choose Subcategory">
   			@foreach($subcategories as $subcategory)
-  			<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+  			<option value="{{$subcategory->id}}"<?php if($item->subcategory_id==$subcategory->id) echo "selected";?>>{{$subcategory->name}}</option>
   			@endforeach
   		</optgroup>
   	</select>

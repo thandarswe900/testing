@@ -93,7 +93,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-       
+       return view('backend.items.itemdetail',compact('item'));
     }
 
     /**
@@ -128,7 +128,7 @@ class ItemController extends Controller
              "price"=>'required',
              "discount" =>'required',
              "description" =>'required',
-             "photo"=>'required',
+             "photo"=>'sometimes',
               "oldphoto"=>'required',
              "brand"=>'required',
                "subcategory"=>'required'
@@ -174,6 +174,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        //
+        $item->delete();
+     return redirect()->route('items.index');   
     }
 }

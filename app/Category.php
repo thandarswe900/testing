@@ -10,7 +10,7 @@ class Category extends Model
         'name', 'photo'
     ];
 
-    public function subcategpries($value='')
+    public function subcategories($value='')
     	{
     		return $this->hasMany('App\Subcategory');
     	}

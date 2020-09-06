@@ -5,24 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Item;
-
+use App\Brand;
+use App\Subcategory;
+use App\Category;
 class PageController extends Controller
 {
      public function mainfun($value='')
     {
    	 
-     $items=Item::take(6)->orderBy('id','DESC')->get();
+     $items=Item::all();
      //dd($items);
-     return view('frontend.main',compact('items'));
+     $brands=Brand::all();
+     return view('frontend.main',compact('items','brands'));
 
    }
-   public function brandfun($value='')
+   public function brandfun($id)
     {
-   	 return view('frontend.brand');
+      $brand=Brand::find($id);
+   	 return view('frontend.brand',compact('brand'));
    }
-    public function itemdetailfun($value='')
+    public function itemdetailfun($id)
     {
-   	 return view('frontend.itemdetail');
+      $items=Item::find($id);
+   	 return view('frontend.itemdetail',compact('items'));
    }
    public function loginfun($value='')
     {
@@ -40,8 +45,10 @@ class PageController extends Controller
     {
    	 return view('frontend.shoppingcart');
    }
-   public function subcategoryfun($value='')
+   public function subcategoryfun($id)
     {
-   	 return view('frontend.subcategory');
+      $subcategory=Subcategory::find($id);
+      $subcategories=Subcategory::all();
+   	 return view('frontend.subcategory',compact('subcategories','subcategory'));
    }
 }

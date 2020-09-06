@@ -102,24 +102,11 @@ $(document).ready(function(){
 
 				})
 
-				tfoot+=`<tr>
-					<td colspan="8">
-					<h3 class="text-right">Total:${total} Ks</h3>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="5">
-						<textarea class="form-control" id="notes" placeholder="Any Request..."></textarea>
-					</td>
-					<td colspan="3">
-						<button class="btn btn-secondary btn-block mainfullbtncolor checkoutbtn">
-							Check Out
-						</button>
-					</td>
-				</tr>`;
+
 
 				$('#shoppingcart_table').html(html);
-				$('#shoppingcart_tfoot').html(tfoot);
+				$('#total').text(total);
+				$('.alltotal').html(total);
 			}
 			else{
 				var noshopping=`<div class="col-12">
@@ -261,7 +248,7 @@ $(document).ready(function(){
 
 
 	       //For Buy Now
-	       $('.checkoutbtn').on('click',function(){
+	       $('.buy_now').on('click',function(){
 	       	var notes=$('#notes').val();
 	       	//var total=$('.total').val();
 	       	var shopString=localStorage.getItem("mycart");
